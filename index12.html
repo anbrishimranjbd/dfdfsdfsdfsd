@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Surprise Videos</title>
+    <style>
+        :root {
+            --romantic-pink: #ef9a9a;
+            --bg-soft: #fdf5f2;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: var(--bg-soft);
+            font-family: 'Arial Rounded MT Bold', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 10px;
+            overflow: hidden; /* Screen se bahar kuch nahi jayega */
+        }
+
+        .header-title {
+            font-size: 32px;
+            color: var(--romantic-pink);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px white;
+        }
+
+        /* --- Container for 4 Tall Videos --- */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px; /* Videos ke darmiyan fasla */
+            width: 100%;
+            max-width: 1000px; /* Zyada phaila hua na ho */
+        }
+
+        .video-card {
+            flex: 1; /* Charon videos barabar jagah leingi */
+            background: white;
+            padding: 5px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            border: 3px solid white;
+            transition: transform 0.3s ease;
+            max-width: 220px; /* Width ko control kiya hai */
+        }
+
+        .video-card:hover {
+            transform: scale(1.05);
+            z-index: 5;
+        }
+
+        /* Video ko lamba (Portrait) banane ke liye */
+        video {
+            width: 100%;
+            aspect-ratio: 9/16; /* Mobile style tall height */
+            object-fit: cover; /* Video frame mein fit ho jaye */
+            border-radius: 10px;
+            display: block;
+            background: #000;
+        }
+
+        .footer-text {
+            margin-top: 20px;
+            color: #8d6e63;
+            font-size: 14px;
+            font-style: italic;
+        }.btn-next {margin-top: 20px;
+            padding: 12px 40px;
+            border: 2px solid #ff6b81;
+            color: #ff6b81;
+            text-decoration: none;
+            border-radius: 100px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .btn-next:hover {
+            background: #ff6b81;
+            color: white;
+        }
+
+        /* Choti screen (Mobile) ke liye adjustment */
+        @media (max-width: 600px) {
+            .video-container {
+                gap: 5px;
+            }
+            .header-title { font-size: 24px; }
+        }
+    </style>
+</head>
+<body>
+
+    <h1 class="header-title">Your Surprise</h1>
+
+    <div class="video-container">
+        <div class="video-card">
+            <video controls><source src="./WhatsApp Video 2026-04-24 at 8.17.34 PM.mp4" type="video/mp4"></video>
+        </div>
+
+        <div class="video-card">
+            <video controls><source src="./WhatsApp Video 2026-04-24 at 8.16.57 PM.mp4" type="video/mp4"></video>
+        </div>
+
+        <div class="video-card">
+            <video controls><source src="./WhatsApp Video 2026-04-24 at 8.16.54 PM (2).mp4" type="video/mp4"></video>
+        </div>
+
+        <div class="video-card">
+            <video controls><source src="./WhatsApp Video 2026-04-24 at 8.16.56 PM.mp4" type="video/mp4"></video>
+        </div>
+    </div>
+
+        <a href="index13.html" class="btn-next">Next ➔</a>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <script>
+        window.onload = function() {
+            confetti({
+                particleCount: 100,
+                spread: 70,
+                origin: { y: 0.8 },
+                colors: ['#ef9a9a', '#ffffff']
+            });
+        };
+    </script>
+
+</body>
+</html>
