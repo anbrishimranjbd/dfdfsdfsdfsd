@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday, My Love!</title>
+    
+    <style>
+        /* Soft, Aesthetic, and Romantic Colors */
+        :root {
+            --bg-color: #fcf1ee; /* Very soft peach/pink */
+            --card-bg: #ffffff;
+            --text-main: #5d4037; /* Warm brown */
+            --romantic-pink: #ef9a9a; /* Pastel pink */
+            --accent-gold: #d4af37; /* Subtle gold */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: 'Arial Rounded MT Bold', 'Helvetica', sans-serif;
+            overflow: hidden; /* No scrolling needed */
+        }
+
+        /* The Main Romantic Card */
+        .card {
+            background: var(--card-bg);
+            width: 340px;
+            height: 600px;
+            border-radius: 40px;
+            box-shadow: 0 20px 60px rgba(239, 154, 154, 0.15); /* Soft pinkish shadow */
+            position: relative;
+            padding: 25px;
+            text-align: center;
+            border: 8px solid #fce4dc;
+            animation: fadeInCard 1.8s ease-out;
+        }
+
+        @keyframes fadeInCard {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Top Photo Section */
+        .photo-section {
+            display: flex;
+            justify-content: center;
+        }
+
+        .circle-frame {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 8px solid var(--romantic-pink);
+            padding: 5px;
+            background: #ffffff;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            transition: transform 0.4s;
+        }
+
+        /* Subtle glow on hover */
+        .circle-frame:hover {
+            transform: scale(1.03);
+            box-shadow: 0 10px 30px rgba(239, 154, 154, 0.3);
+        }
+
+        .circle-frame img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        /* Birthday Boy Text (Large & Stylish) */
+        .birthday-boy-title {
+            margin-top: 5px;
+            font-size: 50px;
+            color: var(--romantic-pink);
+            text-shadow: 2px 2px #fff, 3px 3px rgba(239, 154, 154, 0.1);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-family: 'Arial Rounded MT Bold', sans-serif;
+            animation: pulseTitle 2s infinite ease-in-out;
+        }
+
+        @keyframes pulseTitle {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+        }
+
+        /* Romantic Message */
+        .romantic-message {
+            margin-top: 30px;
+            font-size: 16px;
+            color: var(--text-main);
+            font-style: italic;
+            line-height: 1.6;
+            animation: fadeInText 3s;
+        }
+
+        @keyframes fadeInText {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Heart Icons Decor */
+        .hearts-decor {
+            font-size: 30px;
+            color: var(--romantic-pink);
+            margin-top: 10px;
+            opacity: 0.6;
+        }.btn-start {
+            margin-top: 20px;
+            padding: 18px 50px;
+            background-color: #ff6b81;
+            color: white;
+            text-decoration: none;
+            border-radius: 100px; /* Round button */
+            font-weight: 600;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(255, 107, 129, 0.2);
+        }
+
+        .btn-start:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 25px rgba(255, 107, 129, 0.4);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <div class="photo-section">
+            <div class="circle-frame">
+                <img src="./WhatsApp Image 2026-04-24 at 6.42.04 PM.jpeg" alt="Boy's Photo"> </div>
+        </div>
+
+        <h1 class="birthday-boy-title">Birthday Boy</h1>
+
+        <div class="hearts-decor">♥ &nbsp; ♥ &nbsp; ♥</div>
+
+        <p class="romantic-message">
+            "Every heartbeat is a celebration of you.<br>
+            You are the magic in my life."
+        </p>
+<a href="index2.html" class="btn-start">Let's Go ➔</a>
+    </div>
+
+    
+</body>
+</html>

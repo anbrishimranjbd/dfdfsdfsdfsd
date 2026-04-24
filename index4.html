@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waiting for Surprise...</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: var(--bg-soft);
+            font-family: 'Arial Rounded MT Bold', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 10px;
+            overflow: hidden; /* Screen se bahar kuch nahi jayega */
+        }
+
+        #timer {
+            font-size: 120px;
+            font-weight: bold;
+            color: #ff6b81;
+            letter-spacing: 5px;
+        }
+
+        @media (max-width: 600px) {
+            #timer { font-size: 80px; }
+        } .header-title {
+            font-size: 32px;
+            color: var(--romantic-pink);
+            text-transform: uppercase;
+            letter-spacing: 2px;            color: #ff6b81;
+
+            margin-bottom: 10px;
+            text-shadow: 1px 1px white;
+        }
+
+
+    </style>
+</head>
+<body>
+<h1 class="header-title">Apni bagam ko yha neck pa kiss kro k pasina nikl ai smjha..</h1>
+    <div id="timer">05:00</div>
+
+    <script>
+        function startTimer(duration) {
+            var timer = duration, minutes, seconds;
+            var display = document.getElementById('timer');
+            
+            var countdown = setInterval(function () {
+                minutes = parseInt(timer / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                display.textContent = minutes + ":" + seconds;
+
+                if (--timer < 0) {
+                    clearInterval(countdown);
+                    display.textContent = "00:00";
+                    display.style.color = "ff6b81";
+
+                    // --- YAHAN CHANGE HAI ---
+                    // 1 second ka wait karke dusre page par bhej dega
+                    setTimeout(function() {
+                        window.location.href = "index5.html"; // <--- Apne dusre page ka naam yahan likhein
+                    }, 1000);
+                }
+            }, 1000);
+        }
+
+        window.onload = function () {
+            startTimer(300); // 5 minutes
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Birthday Special ❤️</title>
+    <style>
+        body, html {
+            margin: 0; padding: 0; height: 100%;
+            background-color: #fff5f7; /* Very soft pink */
+            font-family: 'Poppins', sans-serif;
+            display: flex; justify-content: center; align-items: center;
+        }
+
+        .main-container {
+            text-align: center;
+            animation: fadeIn 1.5s ease-in;
+        }
+
+        /* Floating Bubbles/Hearts in background */
+        .bg-circle {
+            position: absolute; background: #ffd1dc;
+            border-radius: 50%; z-index: -1; filter: blur(40px);
+            opacity: 0.5;
+        }
+
+        h1 {
+            font-size: 4rem; color: #ff6b81;
+            margin: 0; font-weight: 800;
+            letter-spacing: -2px;
+        }
+
+        p {
+            font-size: 1.2rem; color: #7d7d7d;
+            margin-top: 10px; font-weight: 300;
+        }
+
+        .btn-start {
+            margin-top: 40px;
+            padding: 18px 50px;
+            background-color: #ff6b81;
+            color: white;
+            text-decoration: none;
+            border-radius: 100px; /* Round button */
+            font-weight: 600;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(255, 107, 129, 0.2);
+        }
+
+        .btn-start:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 25px rgba(255, 107, 129, 0.4);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-circle" style="width: 300px; height: 300px; top: -100px; left: -100px;"></div>
+    <div class="bg-circle" style="width: 400px; height: 400px; bottom: -150px; right: -150px; background: #e0c3fc;"></div>
+
+    <div class="main-container">
+        <h1>Hi, Birthday Boy! ✨</h1>
+        <p>I've created something special for your big day.</p>
+        <a href="index1.html" class="btn-start">Let's Go ➔</a>
+    </div>
+</body>
+</html>

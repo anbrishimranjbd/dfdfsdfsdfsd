@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Boy Album</title>
+    
+    <style>
+        :root {
+            --romantic-pink: #ef9a9a;
+            --soft-bg: #fdf5f2;
+            --text-color: #5d4037;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: var(--soft-bg);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: 'Arial Rounded MT Bold', sans-serif;
+            overflow: hidden;
+        }
+
+        /* Birthday Boy Title */
+        .header {
+            margin-bottom: 20px;
+            text-align: center;
+            animation: fadeIn 2s;
+        }
+
+        .header h1 {
+            font-size: 40px;
+            color: var(--romantic-pink);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 2px 2px white;
+        }
+
+        /* Album Stack Container */
+        .album-container {
+            position: relative;
+            width: 300px;
+            height: 400px;
+            perspective: 1000px;
+        }
+
+        .photo-card {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 20px;
+            border: 8px solid white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1), opacity 0.6s;
+        }
+
+        .photo-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Stack Effect (Thoda teercha look) */
+        .photo-card:nth-child(1) { z-index: 3; transform: rotate(-2deg); }
+        .photo-card:nth-child(2) { z-index: 2; transform: rotate(2deg); }
+        .photo-card:nth-child(3) { z-index: 1; transform: rotate(-4deg); }
+
+        /* Animation when clicked */
+        .slide-out {
+            transform: translateY(-120%) rotate(10deg) !important;
+            opacity: 0;
+            pointer-events: none;
+        }
+.btn-next {margin-top: 10px;
+            padding: 12px 40px;
+            border: 2px solid #ff6b81;
+            color: #ff6b81;
+            text-decoration: none;
+            border-radius: 100px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .btn-next:hover {
+            background: #ff6b81;
+            color: white;
+        }
+        .footer-msg {
+            margin-top: 30px;
+            font-style: italic;
+            color: var(--text-color);
+            text-align: center;
+            font-size: 14px;
+        }
+
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Birthday Boy</h1>
+        <p style="color: #8d6e63;">Tap the photos to see the magic ✨</p>
+    </div>
+
+    <div class="album-container" id="album">
+        <div class="photo-card" onclick="slidePhoto(this)">
+            <img src="./WhatsApp Image 2026-04-24 at 7.17.38 PM (1).jpeg" alt="Pic 3">
+        </div>
+        <div class="photo-card" onclick="slidePhoto(this)">
+            <img src="./WhatsApp Image 2026-04-24 at 7.17.38 PM.jpeg" alt="Pic 2">
+        </div>
+        <div class="photo-card" onclick="slidePhoto(this)">
+            <img src="./WhatsApp Image 2026-04-24 at 7.17.39 PM.jpeg" alt="Pic 1">
+        </div>
+        <div class="photo-card" onclick="slidePhoto(this)">
+            <img src="./WhatsApp Image 2026-04-24 at 7.17.42 PM.jpeg" alt="Pic 1">
+        </div>
+        <div class="photo-card" onclick="slidePhoto(this)">
+            <img src="./WhatsApp Image 2026-04-24 at 7.17.48 PM.jpeg" alt="Pic 1">
+        </div>
+        <div class="photo-card" onclick="slidePhoto(this)">
+            <img src="./WhatsApp Image 2026-04-24 at 7.17.49 PM.jpeg" alt="Pic 1">
+        </div>
+    </div>
+
+    <div class="footer-msg">
+        "Every picture tells a story of us..."
+    </div>
+        <a href="index8.html" class="btn-next">Next ➔</a>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <script>
+        function slidePhoto(card) {
+            // Slide animation add karein
+            card.classList.add('slide-out');
+            
+            // Chota sa confetti blast har click par
+            confetti({
+                particleCount: 40,
+                spread: 50,
+                origin: { y: 0.7 },
+                colors: ['#ef9a9a', '#ffffff']
+            });
+
+            // Agar saari pics khatam ho jayein to wapis reset karne ka option (Optional)
+            // Ya phir bas last pic rehne dein.
+        }
+
+        // Shuru mein thoda sa confetti
+        window.onload = () => {
+            confetti({
+                particleCount: 100,
+                spread: 70,
+                origin: { y: 0.6 }
+            });
+        };
+    </script>
+</body>
+</html>

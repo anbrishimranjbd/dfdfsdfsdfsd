@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wait... there's more!</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: #fdf5f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: 'Arial Rounded MT Bold', sans-serif;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 30px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            width: 90%;
+            max-width: 450px;
+            position: relative;
+        }
+
+        h1 {
+            color: #5d4037;
+            font-size: 24px;
+            margin-bottom: 20px;
+            line-height: 1.4;
+        }
+
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+            position: relative;
+            height: 60px;
+        }
+
+        button {
+            padding: 12px 35px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        /* No Button (Original Clickable) */
+        #no-btn {
+            background-color: #ef9a9a;
+            color: white;
+            box-shadow: 0 5px 15px rgba(239, 154, 154, 0.4);
+        }
+
+        /* Yes Button (The Prank Button) */
+        #yes-btn {
+            background-color: #d7ccc8;
+            color: #5d4037;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Wait kar ke maza aya? <br> Ab aage aur wait karna hai? 😂</h1>
+        
+        <div class="btn-group">
+            <button id="no-btn" onclick="nextPage()">NO</button>
+            
+            <button id="yes-btn" onmouseover="moveButton()" onclick="moveButton()">YES</button>
+        </div>
+    </div>
+
+    <script>
+        // Yes button ko bhagane ka function
+        function moveButton() {
+            const btn = document.getElementById('yes-btn');
+            
+            // Random position calculate karna
+            const x = Math.random() * (window.innerWidth - btn.clientWidth - 50);
+            const y = Math.random() * (window.innerHeight - btn.clientHeight - 50);
+            
+            btn.style.position = 'fixed';
+            btn.style.left = x + 'px';
+            btn.style.top = y + 'px';
+        }
+
+        // Jab "No" par click ho to asli surprise page khule
+        function nextPage() {
+            // Yahan apne album wale page ka naam likhen
+            window.location.href = "index6.html"; 
+        }
+    </script>
+</body>
+</html>
