@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surprise!</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: #fdf5f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: 'Arial Rounded MT Bold', 'Helvetica', sans-serif;
+            text-align: center;
+        }
+
+        .container {
+            background: white;
+            padding: 50px 30px;
+            border-radius: 40px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+            width: 90%;
+            max-width: 550px;
+            border: 2px solid #fce4ec;
+        }
+
+        h1 {
+            color: #d81b60;
+            font-size: 28px;
+            margin-bottom: 25px;
+            letter-spacing: 1px;
+        }
+
+        #typing-text {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 18px;
+            color: #5d4037;
+            line-height: 1.6;
+            white-space: pre-wrap;
+            display: block; /* Poori line lega */
+            margin-bottom: 30px; /* Button se gap rakhega */
+            text-align: left; /* Message left se start ho to behtar lagta hai */
+            padding: 0 10px;
+        }
+
+        /* Next Button Styles */
+        .btn-next {
+            display: inline-block; /* Alag block ban jaye */
+            margin-top: 20px;
+            padding: 12px 40px;
+            border: 2px solid #ff6b81;
+            color: #ff6b81;
+            text-decoration: none;
+            border-radius: 100px;
+            font-weight: 600;
+            transition: 0.3s;
+            opacity: 0; /* Shuru mein nazar nahi ayega */
+            visibility: hidden;
+            transform: translateY(20px); /* Thoda neeche se upar ayega animation mein */
+        }
+
+        /* Jab typing khatam ho to button dikhane ke liye class */
+        .show-btn {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .btn-next:hover {
+            background: #ff6b81;
+            color: white;
+        }
+
+        .heart-icon {
+            font-size: 40px;
+            margin-bottom: 10px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <span class="heart-icon">💖</span>
+        <h1>Special Message for You!</h1>
+        
+        <div id="typing-text"></div>
+        
+        <a href="index17.html" id="next-btn" class="btn-next">Next ➔</a>
+    </div>
+
+    <script>
+        const message = "Oye Mudassir!\njaan mari kasa lga surprise mna bht dil sa sab kia ha sachi ur na jaaaan pta phla mna socha tha k ya website ni bnao gi koi isea hi ni ml raaha tha mna socha ni krti bas gift hi kro gi hir socha btyaa hoa tha tjha bura lga ga agr mna kia to to aj to no sad hona islia ya sab aj baanai achi hana bas jaaan i really love you tm bht acha ho ya sab bht kam ha tmhara pyar k aga hmesha is sa double pyar kra mja ur kush rahna hmesha ghusa km kia kro koja bandar I love you 😊";
+        
+        let index = 0;
+        const speed = 60; 
+
+        function typeWriter() {
+            if (index < message.length) {
+                document.getElementById("typing-text").innerHTML += message.charAt(index);
+                index++;
+                setTimeout(typeWriter, speed);
+            } else {
+                // Jab typing khatam ho jaye, tab button dikhao
+                const nextBtn = document.getElementById("next-btn");
+                nextBtn.classList.add("show-btn");
+            }
+        }
+
+        window.onload = typeWriter;
+    </script>
+</body>
+</html>

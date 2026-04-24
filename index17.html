@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The End ❤️</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: #fdf5f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: 'Arial Rounded MT Bold', sans-serif;
+            overflow: hidden; /* Background particles ke liye */
+        }
+
+        .final-card {
+            background: white;
+            padding: 40px;
+            border-radius: 30px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            text-align: center;
+            max-width: 450px;
+            width: 90%;
+            z-index: 10;
+            position: relative;
+        }
+
+        .gif-container img {
+            width: 200px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            color: #d81b60;
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: #5d4037;
+            font-size: 18px;
+            line-height: 1.5;
+            margin-bottom: 30px;
+        }
+
+        .restart-btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: #ef9a9a;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: 0.3s;
+            box-shadow: 0 5px 15px rgba(239, 154, 154, 0.4);
+        }
+
+        .restart-btn:hover {
+            background-color: #d81b60;
+            transform: scale(1.05);
+        }
+
+        /* Floating Hearts Animation */
+        .heart {
+            position: absolute;
+            color: #ff6b81;
+            font-size: 20px;
+            animation: float 4s linear infinite;
+            opacity: 0;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="final-card">
+        <div class="gif-container">
+            <img src="https://media.tenor.com/PXKZhCEfEfsAAAAj/bubu-bubu-dudu.gif" alt="Cute Bear">
+        </div>
+        <h1>The End! ❤️</h1>
+        <p>I hope ye chota sa surprise tumhare chehre par ek barhi si smile le kar aaya ho. <br><br>Hamesha khush raho!</p>
+        
+        <a href="index.html" class="restart-btn">Restart Journey ↺</a>
+    </div>
+
+    <script>
+        // Background mein udne wale dil (Hearts) banane ka function
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.innerHTML = '❤️';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = Math.random() * 2 + 3 + 's';
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 4000);
+        }
+
+        setInterval(createHeart, 300);
+    </script>
+</body>
+</html>
